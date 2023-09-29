@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# uses a Bash script to display the content of the file /etc/passwd.
 passwd_file="/etc/passwd"
 
 while IFS=: read -r username password uid gid info homedir shell; do
