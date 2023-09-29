@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Define the loop condition with the "while" keyword
+counter=0
+while [ $counter -lt 10 ]; do
+  echo "Best School"
+  counter=$((counter + 1))
+done
