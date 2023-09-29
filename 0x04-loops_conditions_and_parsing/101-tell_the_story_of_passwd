@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # Uses a Bash script that displays the content of the file /etc/passwd, using the while loop + IFS.
 # Useing IFS to colon (:) to split fields
 IFS=':'
