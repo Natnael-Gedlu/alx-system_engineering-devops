@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that uses the 'netstat' command to list listening network sockets
+# along with associated programs and their process IDs (PIDs).
+
+netstat -l --program
