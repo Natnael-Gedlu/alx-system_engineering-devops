@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash script Overwrites the system's /etc/hosts file with the modified hosts file
+# Copy the contents of /etc/hosts to a new file in the user's home directory
+
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2		localhost" >> ~/hosts.new
+echo "8.8.8.8		facebook.com" >> ~/hosts.new
+sudo cp -f ~/hosts.new /etc/hosts
