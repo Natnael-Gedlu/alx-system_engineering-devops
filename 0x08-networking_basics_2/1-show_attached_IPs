@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# bash script uses 'ifconfig' command to display all active IPv4 IPs
+
+ifconfig | grep -oE 'inet [0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | awk '{print $2}'
