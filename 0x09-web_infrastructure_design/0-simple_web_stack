@@ -1,0 +1,41 @@
+What is a server?
+A server is a computer system or software that provides functionality or services to other computers, known as
+clients over a network.
+
+What is the role of the domain name?
+A domain name is a human-readable address used to identify and locate resources on the internet.
+It maps to an IP address, allowing users to access websites and services using a memorable name instead of numeric IP addresses.
+
+What type of DNS record www is in www.foobar.com?
+The DNS record type for "www" in www.foobar.com is typically a CNAME record, which is an alias of another domain's hostname.
+
+What is the role of the web server?
+The web server serves web pages or content to users web browsers over the internet. It receives HTTP requests from
+clients, retrieves web pages or data, and sends the information back to the client's browser.
+
+What is the role of the application server?
+An application server hosts and manages software applications. It handles tasks such as data processing,
+application logic, and interaction with the database, ensuring the functionality of the software is carried out properly.
+
+What is the role of the database?
+The database stores and manages structured sets of data used by applications. It's responsible for storing, organizing,
+and providing access to the data needed by the application.
+
+What is the server using to communicate with the computer of the user requesting the website?
+The server communicates with the user's computer via the HTTP protocol. This protocol allows the exchange of data between
+the web server and the client's browser when requesting and receiving web pages.
+
+Issues with this infrastructure:
+
+SPOF (Single Point of Failure):
+A SPOF is a critical component within the infrastructure that, if it fails, can lead to the entire system's failure.
+For example, if there's only one web server and it goes down, the entire website becomes inaccessible.
+
+Downtime during maintenance (such as deploying new code):
+Deploying new code or performing maintenance may require restarting the web server, resulting in downtime. During this
+period, the website might be temporarily unavailable to users.
+
+Inability to scale with high incoming traffic:
+If the infrastructure is unable to handle a sudden surge in incoming traffic, the website might become slow or even
+inaccessible. Without proper scalability measures, it becomes challenging to accommodate increased user demand without
+compromising performance.
