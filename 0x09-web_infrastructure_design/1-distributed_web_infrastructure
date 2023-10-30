@@ -1,0 +1,35 @@
+For every additional element, why you are adding it?
+Load balancer: distributes incoming requests equally among the available servers to ensure optimal resource utilization,
+high availability, and reliability.
+Replica server: in our case adding a replica server is used as a backup incase the Primary server fails.
+
+What distribution algorithm your load balancer is configured with and how it works?
+The load balancer uses a Round Robin distribution algorithm. It distributes incoming requests equally among the
+available backend servers in a sequential order, routing requests to each server in turns.
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both?
+In an Active-Active setup, all nodes are actively serving traffic. This setup provides high availability and even load
+distribution across all nodes.
+While n an Active-Passive setup, one node is the active node that handles traffic while the passive node remains inactive.
+If the active node fails, the passive node takes over.
+
+How a database Primary-Replica (Master-Slave) cluster works?
+A Primary-Replica cluster involves a master node (Primary) and one or more slave nodes (Replicas). The Primary node
+manages write operations and coordinates the Replicas. Replicas replicate data from the Primary node and handle read
+operations providing fault tolerance and scalability.
+
+What is the difference between the Primary node and the Replica node in regard to the application?
+Primary Node: Handles write operations, ensuring consistency and durability of data, and controls the overall state of the database.
+Replica Node: Handles read operations, replicates data from the Primary node, and helps in load balancing by serving read
+queries, improving performance.
+
+Where are SPOF
+In this case the load balancer itself could be a SPOF if it fails, disrupting traffic distribution.
+In the Active-Passive setup, failure of the active node leads to downtime until the passive node takes over.
+
+Security issues (no firewall, no HTTPS)?
+Lack of a firewall leaves the infrastructure vulnerable to external threats and unauthorized access.
+
+No monitoring?
+Without monitoring, it's challenging to detect and address performance issues, anomalies, or failures, which can lead
+to service disruptions and impact user experience.
