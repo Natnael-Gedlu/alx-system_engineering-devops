@@ -1,0 +1,31 @@
+For every additional element, why you are adding it?
+Firewalls are added to control and filter incoming and outgoing network traffic.
+SSL (Secure Socket Layer) certificates are added to enable HTTPS and encrypt data transmission between clients and servers.
+Monitoring clients or tools are used to observe and collect performance data from client-side devices or software.
+
+What are firewalls for?
+Firewalls control incoming and outgoing network traffic based on predetermined security rules to protect against
+unauthorized access and potential threats.
+
+Why is the traffic served over HTTPS?
+Traffic is served over HTTPS for secure and encrypted connections between the client and server, safeguarding sensitive
+data from eavesdropping.
+
+What monitoring is used for?
+Monitoring is used to observe and analyze system performance, detect issues, and ensure system health and security.
+
+How the monitoring tool is collecting data?
+Monitoring tools collect data through agents, logs, or APIs to track system metrics and performance.
+
+Explain what to do if you want to monitor your web server QPS?
+Use monitoring tools to set up tracking of Queries Per Second (QPS) metrics, configure the tools to gather performance
+data, and create alerts or reports to monitor QPS.
+
+Why terminating SSL at the load balancer level is an issue?
+Terminating SSL at the load balancer exposes unencrypted data within the internal network, compromising security.
+
+Why having only one MySQL server capable of accepting writes is an issue?
+A single MySQL server for writes is a Single Point of Failure (SPOF) – failure could lead to downtime and data integrity issues.
+
+Why having servers with all the same components (database, web server and application server) might be a problem?
+Because it may lead to vulnerabilities – if one server has a flaw, it affects all, increasing the risk across the infrastructure.
