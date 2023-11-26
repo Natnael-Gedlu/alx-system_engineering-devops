@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script lets you use privatekey instade of password
+
+Host *
+    HostName 54.167.145.184
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
