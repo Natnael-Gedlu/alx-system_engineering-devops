@@ -1,18 +1,25 @@
 #!/usr/bin/env bash
-# Install Nginx with specific configurations.
-# Set up directories and files
+# Script to configure Nginx on a new Ubuntu machine with a custom HTTP response header.
 
+# Check if script is run as root
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run this script as root using sudo."
+    exit 1
+fi
+
+# Install Nginx
 apt-get update
 apt-get install -y nginx
 
-sudo ufw allow 'Nginx HTTP'
-sudo mkdir -p /var/www/html
-sudo chmod -R 755 /var/www
-
+# Set up directories and files with proper permissions
+mkdir -p /var/www/html
 echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-# Configure Nginx default site
+chown -R www-data:www-data /var/www/html
+chmod -R 755 /var/www/html
+
+# Configure Nginx default site with custom header
 cat > /etc/nginx/sites-available/default <<EOF
 server {
     listen 80 default_server;
@@ -20,17 +27,8 @@ server {
     add_header X-Served-By \$hostname;
     root /var/www/html;
     index index.html index.htm;
-
-    location /redirect_me {
-        return 301 https://YouTube.com/;
-    }
-
-    error_page 404 /404.html;
-    location = /404.html {
-        root /var/www/html;
-        internal;
-    }
 }
 EOF
 
-sudo service nginx restart
+# Restart Nginx
+service nginx restart
