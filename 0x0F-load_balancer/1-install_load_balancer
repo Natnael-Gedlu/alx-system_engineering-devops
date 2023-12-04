@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Configure HAProxy to send traffic to web-01 and web-02 servers
+# Install HAproxy on a server
+apt-get -y update
+apt-get -y install haproxy=1.6.\*
+
+# haproxy configuration
+echo '
+frontend Innocent.Sax
+        bind 0:80
+        default_backend web_servers
+
+backend web_servers
+        balance roundrobin
+        server 123118-web-01 100.26.50.220
+        server 123118-web-02 100.25.102.255
+' >> /etc/haproxy/haproxy.cfg
